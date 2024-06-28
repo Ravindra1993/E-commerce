@@ -1,0 +1,32 @@
+/* dashboard.component.css */
+.dashboard {
+  padding: 16px;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.summary {
+  margin-top: 16px;
+  border-top: 1px solid #ccc;
+  padding-top: 16px;
+}
+
+.summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.summary li {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.summary button {
+  margin: 0 8px;
+  padding: 4px 8px;
+}

@@ -1,0 +1,47 @@
+/* app.component.css */
+.App {
+    display: flex;
+    font-family: Arial, sans-serif;
+  }
+  
+  .menu-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    z-index: 1;
+  }
+  
+  .content {
+    transition: margin-left 0.3s ease-in-out;
+    padding: 15px 0px 15px 50px;
+  }
+  
+  .content-reduced {
+    margin-left: 250px; /* Adjust this value to match the width of your sidebar */
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      margin-left: 0;
+    }
+  
+    .sidebar {
+      width: 100%;
+      left: -100%;
+    }
+  
+    .sidebar.open {
+      left: 0;
+    }
+  
+    .content-reduced {
+      margin-left: 100%;
+    }
+  }
+  

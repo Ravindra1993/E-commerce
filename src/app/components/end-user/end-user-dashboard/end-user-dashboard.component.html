@@ -1,0 +1,20 @@
+<!-- dashboard.component.html -->
+<div class="dashboard">
+    <h1>Shopping Products</h1>
+    <div class="product-list">
+      <app-product *ngFor="let product of products" [product]="product" (selectedProduct)="onProductSelect(product)"></app-product>
+    </div>
+    <div class="summary" *ngIf="selectedProducts.length > 0">
+      <h2>Selected Products</h2>
+      <ul>
+        <li *ngFor="let product of selectedProducts">
+          <button (click)="decrementQuantity(product)">-</button>
+          {{ product.title }} (x{{ product.quantity }}) - {{ product.price | currency }}
+          <button (click)="incrementQuantity(product)">+</button>
+        </li>
+      </ul>
+      <p>Total Cost: {{ getTotalCost() | currency }}</p>
+      <button (click)="buyProducts()">Buy</button>
+    </div>
+</div>
+  

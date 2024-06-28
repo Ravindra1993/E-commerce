@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="form-content">
+        <h2>Register Form</h2>
+        <form action="" [formGroup]="signUpForm">
+            <div class="field">
+                <label>Name :</label>
+                <input type="text" formControlName="name" required>
+            </div>
+            <div class="field">
+                <label>Email :</label>
+                <input type="text" formControlName="email" required>
+            </div>
+            <div class="field">
+                <label>Mobile No :</label>
+                <input type="text" formControlName="mobile_no" required>
+            </div>
+            <div class="field">
+                <label>Gender</label>
+                <select name="" id="" formControlName="gender" required>
+                    <option value="">--Select gender --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Password :</label>
+                <input type="text" formControlName="password" required>
+            </div>
+            <div class="field">
+                <button type="button" (click)="cancel()">Cancel</button>
+                <button type="submit" (click)="submit()">Submit</button>
+            </div>
+        </form>
+        <div class="noteText">Have you sing in? &nbsp;<p (click)="goto()"> Sign In </p></div>
+
+    </div>
+</div>

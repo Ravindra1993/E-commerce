@@ -1,0 +1,142 @@
+// Variables
+$primary-color: #4CAF50;
+$button-hover-color: darken($primary-color, 10%);
+$input-border-color: #ccc;
+$input-focus-border-color: $primary-color;
+$label-color: #333;
+$container-padding: 20px;
+$form-padding: 15px;
+$field-margin-bottom: 15px;
+
+// Mixin for flex-center
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Container
+.container {
+  @include flex-center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+// Form Content
+.form-content {
+  background-color: #fff;
+  padding: $container-padding;
+  box-shadow: 0 0 10px #0000001a;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: $field-margin-bottom;
+    color: $primary-color;
+  }
+
+  form {
+    padding: $form-padding;
+
+    .field {
+      margin-bottom: $field-margin-bottom;
+
+      label {
+        color: $label-color;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $input-border-color;
+        border-radius: 4px;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: $input-focus-border-color;
+          outline: none;
+        }
+      }
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $input-border-color;
+        border-radius: 4px;
+        transition: border-color 0.3s;
+
+        &:focus {
+          border-color: $input-focus-border-color;
+          outline: none;
+        }
+      }
+
+    }
+
+    .field:last-child {
+      @include flex-center;
+      justify-content: space-between;
+
+      button {
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $button-hover-color;
+        }
+
+        &:first-child {
+          background-color: #ccc;
+
+          &:hover {
+            background-color: darken(#ccc, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+p{
+    margin: 0;
+    color: #24a5fb;
+    cursor: pointer;
+}
+
+
+/*  Side bar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: left 0.3s ease-in-out;
+  padding-top: 60px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #444;
+}

@@ -1,0 +1,9 @@
+<!-- app.component.html -->
+<button class="menu-button" (click)="toggleSidebar()" *ngIf="!hideSidebar">
+    <i [class]="isSidebarOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+  </button>
+  <app-side-bar [isSidebarOpen]="isSidebarOpen" *ngIf="!hideSidebar"></app-side-bar>
+  <div class="content" [class.content-reduced]="isSidebarOpen && !hideSidebar">
+    <router-outlet></router-outlet>
+  </div>
+  
